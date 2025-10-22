@@ -120,7 +120,7 @@ rules = association_rules(frequent_itemsets, metric='lift', min_threshold=1.5)
 print("\nTop Association Rules:")
 print(rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].head(10))
 
-# ---- Step 8: Predictive Modeling (Bonus) ----
+# ---- Step 8: Predictive Modeling  ----
 df['HighCasualty'] = (df['Casualties'] >= 10).astype(int)
 X = pd.get_dummies(df[['Region', 'AttackType', 'WeaponType']], drop_first=True)
 y = df['HighCasualty']
@@ -136,3 +136,4 @@ print("\nClassification Report:\n", classification_report(y_test, y_pred))
 
 print("\n✅ PROJECT EXECUTED SUCCESSFULLY ✅")
 print("📊 Visuals Displayed | 🌍 Map Saved | 🔗 Rules Mined | 🤖 Model Evaluated")
+
